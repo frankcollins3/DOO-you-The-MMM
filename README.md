@@ -3,7 +3,7 @@ DOO YOU?! The Mystery-Munchies-Maze
 
 gr8 TEMPLATE for full Javacsript basics -> async/promise animation... doubleButtons to get around .domContentLoaded(sound.play();) returning forced interactivity errors. Little story through a scooby-doo based maze
 
-
+Internal CSS and JS was used because of the 100 limited files allowed.
 
 This would preferably be a full stack app:
 kind if ironic/weird because such an idea would seem a little cheesy for all that effort 
@@ -29,7 +29,5 @@ and event listeners the easiest to grasp.
 V.S. a full game of frogger 
 
 fwc3rd@gmail.com
-full folder available on standby.
-******* WILL BE UPLOADING **********
-PART 1 
-PART 2
+*******
+adding responsive DESIGN.
