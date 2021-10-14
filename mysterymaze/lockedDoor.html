@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            h1 {
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px;
+                padding: 5px;
+                font-size: 55px;
+            }
+
+            body {
+                background-image: url('ghoulsnblocks/locked-door.jpeg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                overflow-x: hidden;
+            }
+            .btn {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                margin: 0px 50px;
+            }
+            button:hover {
+                border: 3px solid rgb(14, 117, 14);
+                cursor: pointer;
+            }
+            .hidden {
+                display: none;
+            }
+            #hiddenButton {
+                height: 85px;
+                width: 85px;
+                border-radius: 50%;
+                position: relative;
+                left: 800px;
+                top: -275px;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #changePage {
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #checkUpdates {
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .keyDisplay {
+                margin: 0px 100px;
+                width: 200px;
+                height: 200px;
+                /* border: 2px solid orange; */
+                /* background-color: gray; */
+                background-image: url('https://i.pinimg.com/originals/7e/c0/63/7ec0635f74c14d8ab20deb626c829f3c.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+                left: 350px;
+                top: -150px;
+            }   
+            .hiddenText {
+                display: none;
+            }
+            .unHiddenText {
+                color: rgb(71, 10, 71);
+                font-size: 25px;
+                box-shadow: 2px 2px 2px white;
+                position: relative;
+                left: 190px;
+                background-color: white;
+            }
+            section {
+                position: relative;
+                top: 100px;
+                left: 300px;
+            }
+        </style>
+    </head>
+    <body class="lockedBody">
+        <h1> There's Got To Be A Way Out Of here!</h1>
+            <section>
+                <section>
+                    <button class="btn" id="changePage" type="button"></button>
+                   <button class="btn" id="checkUpdates" type="button"></button>
+               </section>
+               <section>
+               <a id="hiddenAnchor">
+               <div class="keyDisplay"></div>
+               <a label for="keyDisplay" class="hiddenText">'Like, we need a key.</a>
+                </a>
+                </section>
+                <section>
+                    <button type="submit" class="hidden" id="hiddenButton" onclick="goBack()"></button>
+                </section>
+            </section>
+            <script>
+                const changeItUp = document.querySelector('#changePage');
+const updates = document.querySelector('#checkUpdates');
+const display = document.querySelector('.keyDisplay');
+const hiddenAnchor = document.querySelector('#hiddenAnchor');
+const keyDisplay = document.querySelector('.hiddenText');
+const hiddenButton = document.querySelector('#hiddenButton');
+
+hiddenButton.style.backgroundImage = "url('icons/back-button.png')";
+changeItUp.style.backgroundImage = "url('icons/doorknob2.png')";
+updates.style.backgroundImage = "url('icons/madame.png')";
+let lockedDoor = [];  
+changeItUp.addEventListener('click', function(event) {
+  changeItUp.classList.add('hidden');
+  updates.style.height = "85px";
+  updates.style.width = "85px";
+  if (localStorage.getItem('haveKey') === 'true') {
+    localStorage.setItem('lockedDoor', 'false');
+    console.log(localStorage.getItem('lockedDoor'));
+    lockedDoor.push('false');        
+    console.log(lockedDoor);
+}
+})
+updates.addEventListener('click', function(event) {    
+    if (localStorage.getItem('lockedDoor', 'false')) {
+    console.log(lockedDoor);
+    display.style.backgroundImage = "url('proceedTrail/key.jpeg')";
+    display.style.backgroundSize = "cover";
+    display.style.backgroundRepeat = "no-repeat";
+    display.style.cursor = "pointer";
+    display.style.boxShadow = "2px 2px 2px green";
+    hiddenAnchor.setAttribute('href', 'lastDoorToKitchen.html'); 
+  } else {
+    display.style.background = "url('icons/lockdoor.jpeg') no-repeat";
+    updates.style.border = "3px solid rgb(141, 20, 20)";
+    hiddenButton.classList.remove('hidden');
+    display.style.backgroundSize = "100% 100%";
+    keyDisplay.classList.remove('hidden');
+    keyDisplay.classList.add('unHiddenText');
+  }
+});
+const goBack = () => {
+  window.location.href = "multipleOptions2.html";
+}
+console.log(history.length);    // works
+            </script>
+    </body>
+</html>

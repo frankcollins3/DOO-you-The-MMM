@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/lastDoorToKitchen.css">
+    </head>
+    <style>
+            body {
+    padding: 100px 0;
+}
+.btn {
+    height: 120px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+    left: 600px;
+    top: 300px;
+    opacity: 30%;
+    cursor:pointer;
+}
+.btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+    opacity: 100%;
+}
+    </style>
+    <body>
+        <h1>hey guys</h1> 
+        <a href="food.html">
+        <button class="btn" id="sandwich" type="submit"></button>
+        </a>
+       <script>
+localStorage.getItem("haveKey");
+
+if(localStorage.getItem("haveKey") !== null) {
+    console.log("double verify");
+}
+
+document.body.style.backgroundImage = "url('proceedTrail/lastDoor2Kitchen.jpeg')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat"; 
+
+const kitchenButton = document.querySelector('#sandwich');
+console.log(kitchenButton);
+kitchenButton.style.backgroundImage = "url('icons/sandwich.png')";
+kitchenButton.style.backgroundSize = "cover";
+kitchenButton.style.backgroundRepeat = "no-repeat";
+       </script>
+    </body>
+</html>

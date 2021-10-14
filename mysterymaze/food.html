@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.typekit.net/bhq5hgi.css">
+        <style>
+            /* 
+Source Code Pro Bold
+font-family: source-code-pro, monospace;
+font-weight: 700;
+font-style: normal;
+
+Source Code Pro Regular
+font-family: source-code-pro, monospace;
+font-weight: 400;
+font-style: normal;
+
+Source Code Pro Bold Italic
+font-family: source-code-pro, monospace;
+font-weight: 700;
+font-style: italic;
+
+Source Code Pro Italic
+font-family: source-code-pro, monospace;
+font-weight: 400;
+font-style: italic;
+
+*/
+body {
+    padding: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+    position: relative;
+    right: 400px;
+}
+span {
+    padding: 0px 15px;
+    margin: 0px 55px;
+    color: rgb(71, 10, 71);
+    box-shadow: 2px 2px 3px white;
+    background-color: rgba(255, 255, 255, 0.459);
+    font-size: 66px;
+}
+
+p {
+    text-align: center;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.flexParent {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverSection {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    left: 1000px;
+    margin: 5px;
+    padding: 0;
+    opacity: 0.5;
+}
+
+#hoverSection {
+    cursor: pointer;
+}
+
+#sandwich {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    position: relative;
+    left: 1420px;
+    top: 680px;
+    opacity: 0.1;
+    z-index: 1;
+}
+#sandwich:hover {
+    opacity: 0.8; 
+    border: 3px solid rgb(14, 117, 14);
+}
+
+#hotDog {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: 2000px;
+    top: 860px;
+    opacity: 0.2;
+    animation: fadeIn 40s;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    20% {
+        opacity: 0.1;
+    }
+    40% {
+        opacity: 0.4
+    }
+    80% {
+        opcity: 0.6
+    }
+    100% {
+        opacity: 0.8; 
+    }
+}
+
+#hotDog:hover {
+    opacity: 0.8;
+    border: 3px solid rgb(14, 117, 14);
+}
+
+#hat {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    left: 1600px;
+    opacity: 0.0;
+}
+#hat:hover {
+    opacity: 0.2;
+    border: 3px solid rgb(14, 117, 14);
+}
+
+#sauce {
+    height: 85px;
+    width: 85px;
+    border-radius: 75%;
+    position: relative;
+    left: 1430px;
+    top: 777px;
+    opacity: 0.2;
+}
+#sauce:hover {
+    opacity: 1.0;
+    border: 2px solid rgb(14, 117, 14);
+    box-shadow: 3px 3px 3px rgb(167, 10, 10)
+}
+
+.rumble {
+    animation: rumbleButton 5s ;
+    animation-iteration-count: 1;
+}
+
+@keyframes rumbleButton {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    5% { transform: translate(1px, 1px) rotate(1deg); }
+   10% { transform: translate(-1px, -1px) rotate(-1deg); }
+   15% { transform: translate(2px, 1px) rotate(-2deg); }
+   20% { transform: translate(-1px, -2px) rotate(-1deg); }
+   22% { transform: translate(-2px, 1px) rotate(-1deg); }
+   24% { transform: translate(-1px, -2px) rotate(2deg); }
+   26% { transform: translate(3px, -2px) rotate(2deg); }
+   28% { transform: translate(-1px, 1px) rotate(1deg); }
+   30% { transform: translate(-2px, -1px) rotate(-1deg); }
+   32% { transform: translate(1px, -1px) rotate(-1deg); }
+   33% { transform: translate(-1px, 1px) rotate(-2deg); }
+   34% { transform: translate(-3px, -2px) rotate(-1deg); }
+   35% { transform: translate(-1px, -1px) rotate(-1deg); }
+   36% { transform: translate(1px, 1px) rotate(1deg); }
+   37% { transform: translate(-1px, 1px) rotate(-1deg); }
+   38% { transform: translate(2px, 2px) rotate(2deg); }
+   39% { transform: translate(1px, -1px) rotate(-1deg); }
+   40% { transform: translate(-2px, -2px) rotate(-2deg); }
+   42% { transform: translate(2px, 2px) rotate(2deg); }
+   44% { transform: translate(1px, 1px) rotate(1deg); }
+   46% { transform: translate(-1px, -1px) rotate(2deg); }
+   48% { transform: translate(2px, 2px) rotate(2deg); }
+   50% { transform: translate(-3px, -2px) rotate(-2deg); }
+   40% { transform: translate(-3px, -2px) rotate(-2deg); }
+   40% { transform: translate(-3px, -2px) rotate(-2deg); }
+   40% { transform: translate(-3px, -2px) rotate(-2deg); }
+   40% { transform: translate(-3px, -2px) rotate(-2deg); }
+   50% { transform: translate(1px, 2px) rotate(0deg); }
+   100% { transform: translate(1000px, 10px) rotate(-360deg); }
+ 
+  }
+
+#dessert {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+    left: 1440px;
+    top: 900px;
+    opacity: 0.2;
+}
+#dessert:hover {
+    opacity: 1.0;
+    border: 3px solid rgb(14, 117, 14);
+}
+
+#clickCounter {
+    height: 50px;
+    width: 50px;
+    border-radius: 70%;
+    position: relative;
+    left: 500px;
+    top: 100px;
+    background-color: rgb(125, 49, 168);
+}
+
+#responseDisplay {
+    position: relative;
+    font-family: verdana;
+    font-size: 15px;
+    height: 120px;
+    width: 120px;
+    border: 2px solid brown;
+}
+            
+        </style>
+    </head>
+    <body class="blurBody">
+        <h1> No Win and No Lose: You Are Just <span>A-MAZE-ING</span> </h1>
+
+        <div class="flexParent">
+        <section class="hoverSection" onclick="introClick()"></section>
+        </div>
+            
+        <section>
+
+            <button class="btn" type="submit" id="sandwich" onclick="sandwichFunction()"></button>
+            <button class="btn" type="submit" id="hotDog" onclick="hotDogClick()"></button>
+            <button class="btn" type="submit" id="hat" onclick="hatSound()"></button>
+            <button class="btn" type="submit" id="sauce" onclick="sauceCounter()"></button>
+            <button class="btn" type="submit" id="dessert" onclick="pieClick()"></button>
+        </section>
+
+        <audio>
+            <audio src="fx/food/heavenintro.wav" id="intro" type="wav"></audio>
+
+            <audio src="fx/food/1stClickSandwich.wav" id="sandwich1" type="audio/wav"></audio>
+            <audio src="fx/food/2ndSandwich.wav" id="sandwich2" type="audio/wav"></audio>
+            <audio src="fx/food/3rdSandwich.wav" id="sandwich3" type="audio/wav"></audio>
+            <audio src="fx/food/noMoreFood.wav" id="noFood" type="audio/wav"></audio>
+
+            <audio src="fx/food/dessert.wav" id="dessert" type="audio/wav"></audio>
+            <audio src="fx/food/foodIntervalFx.wav" id="foodInterval" type="audio/wav"></audio>
+            <audio src="fx/food/foodParty.wav" id="foodParty" type="audio/wav"> </audio>
+            <audio src="fx/food/yuck.wav" id="yuck" type="audio/wav"></audio>
+            <audio src="fx/food/sizzle1.wav" id="hot" type="audio/wav"></audio>
+            <audio src="fx/food/sizzle2.wav" id="hotter" type="audio/wav"></audio>
+            <audio src="fx/food/fireFx.wav"  id="fire" type="audio/wav"></audio>
+
+        </audio>
+
+        <script>
+
+const intro = new Audio();
+intro.src = "fx/food/heavenIntro.wav";
+const sandwich1 = new Audio();
+sandwich1.src = "fx/food/1stClickSandwich.wav";
+const sandwich2 = new Audio();
+sandwich2.src = "fx/food/2ndSandwich.wav";
+const sandwich3 = new Audio();
+sandwich3.src = "fx/food/3rdSandwich.wav";
+const noFood = new Audio();
+noFood.src = "fx/food/noMoreFood.wav";
+const dessert = new Audio();
+dessert.src = "fx/food/dessert.wav";
+const foodInterval = new Audio();
+foodInterval.src = "fx/food/foodIntervalFx.wav";
+const foodParty = new Audio();
+foodParty.src = "fx/food/foodParty.wav";
+const yuck = new Audio();
+yuck.src = "fx/food/yuck.wav";
+const sizzleSound = new Audio();
+sizzleSound.src = "fx/food/sizzle1.wav";
+const sizzlerSound = new Audio();
+sizzlerSound.src = "fx/food/sizzle2.wav";
+const fireSound = new Audio();
+fireSound.src = "fx/food/fireFx.wav";
+
+document.body.style.backgroundImage = "url('icons/blurredFood.png')"; 
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "norepeat";
+
+const sandwichButton = document.querySelector('#sandwich');
+sandwichButton.style.backgroundImage = "url('icons/sandwich.png')";
+sandwichButton.style.backgroundSize = "cover";
+sandwichButton.style.backgroundRepeat = "no-repeat"
+
+const hotDogBtn = document.querySelector('#hotDog');
+hotDogBtn.style.backgroundImage = "url('icons/hot-dog.png')";
+hotDogBtn.style.backgroundSize = "cover";
+hotDogBtn.style.backgroundRepeat = "no-repeat";
+
+const hatBtn = document.querySelector('#hat');
+hatBtn.style.backgroundImage = "url('icons/fedora-hat.png')";
+hatBtn.style.backgroundSize = "cover";
+hatBtn.style.backgroundRepeat = "no-repeat";
+
+const sauceBtn = document.querySelector('#sauce');
+sauceBtn.style.backgroundImage = "url('icons/sauce1.png')";
+sauceBtn.style.backgroundSize = "cover";
+sauceBtn.style.backgroundRepeat = "no-repeat";
+
+const pieBtn = document.getElementById('dessert');
+pieBtn.style.backgroundImage = "url('icons/pie.png')";
+pieBtn.style.backgroundSize = "cover";
+pieBtn.style.backgroundRepeat = "no-repeat";
+
+
+const responseDisplay = document.querySelector('#responseDisplay');
+const hoverIntro = document.querySelector('.hoverSection');
+hoverIntro.style.backgroundImage = "url('icons/sandwich2.jpeg')";
+console.log(hoverIntro);
+
+let wholeCounter = [];
+let counter = "";
+
+const sandwichFunction = () => {
+    counter += counter;
+    wholeCounter.push(counter);
+     
+    if (wholeCounter.length === 1) {
+        sandwich1Func(); 
+    } else if (wholeCounter.length ===2) {
+        intervalFunc();
+    } else if (wholeCounter.length ===3) {
+        sandwich2Func();
+    } else if (wholeCounter.length ===4) {
+        sandwich3Func();
+    } else if (wholeCounter.length ===5) {
+        noFoodFunc();
+        sandwichButton.classList.add('hidden');
+    }
+}
+
+    let wholeCounter2 = [];
+    let counter2 = "";
+
+    const introClick = () => {
+        counter2 += counter2;
+        wholeCounter2.push(counter2);
+
+    if (wholeCounter2.length === 1) {
+        hoverIntro.style.backgroundImage = "url('icons/greenlight.jpeg')";
+        hoverIntro.style.cursor = "pointer";
+    intro.play();
+    } else if (wholeCounter2.length ===2) {
+        document.body.style.backgroundImage = "url('proceedTrail/food.jpeg')";
+        hoverIntro.style.display = "none";
+    } else {
+
+    }
+    }
+
+    const sandwich1Func = () => {
+        sandwich1.play();
+    }
+    const sandwich2Func = () => {
+        sandwich2.play();
+    }
+    const sandwich3Func = () => { 
+        sandwich3.play();
+    }
+    const noFoodFunc = () => {
+        noFood.play();
+    }
+    const intervalFunc = () => {
+        foodInterval.play();
+    }
+    const hatSound = () => {
+        yuck.play();
+    }
+
+    let wholeCounter3 = [];
+    let counter3 = "";
+
+    const sauceCounter = () => {
+    counter3 += counter3;
+    wholeCounter3.push(counter3);
+    if (wholeCounter3.length === 1) {
+        sizzleSound.play();
+        sauceBtn.style.backgroundImage = "url('icons/sauce2.png')";
+        sauceBtn.style.backgroundColor = "rgb(167, 10, 10)";
+        sauceBtn.style.border = "3px solid #F2B60F";
+        sauceBtn.style.boxShadow = "4px 4px 4px rgb(177, 17, 17)";
+    } else if (wholeCounter3.length === 2) {
+        sizzlerSound.play();
+        sauceBtn.style.border = "4px solid #F1ED05";
+        sauceBtn.style.opacity = "1.0";
+        sauceBtn.style.boxShadow = "8px 9px 10px rgb(167, 10, 10)";
+        sauceBtn.classList.add('rumble');
+    } else {
+        sauceBtn.setAttribute('disabled');
+    }
+    }
+
+    const hotDogClick = () => {
+        foodParty.play();
+    }
+
+    const pieClick = () => {
+        dessert.play();
+    }
+        </script>
+    </body>
+</html>

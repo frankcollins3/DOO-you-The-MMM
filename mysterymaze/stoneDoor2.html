@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        h1 {
+        color: red;
+        border: 2px solid blue;
+    }
+    .btn {
+        height: 85px;
+        width: 85px;
+        border-radius: 50%;
+        border: 3px solid rgb(14, 117, 14);
+        position: relative;
+        left: 1400px;
+        top: 500px;
+        margin: 0px 20px;
+    }
+    #stone2 {
+        height: 50px;
+        width: 50px;
+        border:  3px solid orange;
+        animation: seeItOpen 5s;
+    }
+    @keyframes seeItOpen {
+        0% {
+            opacity: 0.8;
+        }
+        25% {
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        75% {
+            opacity: 0.2;
+        }
+        100% {
+            opacity: 0.1;
+            border: 3px solid rgb(71, 10, 71);
+        }
+    }      
+        .hidden {
+            display: none;
+        }
+    </style>
+    <body>
+ 
+       <section>
+        <button type="button" class="btn" id="stone" onclick="stonedReveal()"></button>
+        <button type="button" class="hidden" id="stone2" onclick="changePath()"></button>
+       </section>
+
+       <audio>
+        <audio src="stoneDoor.wav" type="audio/wav" id="stoneDoor"></audio>
+       </audio>
+
+        <script>
+            document.body.style.backgroundImage = "url('proceedTrail/stoneDoor2A.jpeg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundRepeat = "no-repeat";
+
+            let stoneDoorSound = new Audio();
+            stoneDoorSound.src = "fx/trail/stoneDoor.wav";
+
+            const stoneButton = document.getElementById('stone');
+            const stoneButton2 = document.getElementById('stone2');
+
+            stoneButton.style.backgroundImage = "url('icons/stone.png')";
+            stoneButton2.style.backgroundImage = "url('icons/stone.png')"; 
+
+            const stonedReveal = () => {
+                stoneDoorSound.play();
+                stoneButton2.classList.remove('hidden');
+                stoneButton.classList.add('hidden');
+                stoneButton2.classList.add('btn');
+                console.log('hey');
+            }
+
+            const changePath = () => {
+                document.location.href = "lastDoorToKitchen.html";
+            }
+        </script>
+    </body>
+</html>

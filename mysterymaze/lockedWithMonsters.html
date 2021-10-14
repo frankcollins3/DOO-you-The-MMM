@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    color: white;
+    padding-top: 100px;
+    text-align: center;
+    /* font-family: //  */
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+h1 {
+    color: white;
+    font-size: 35px;
+    /* Make it Fade Out */
+}
+
+#door {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    position: relative;
+    top: 500px;
+    left: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 3px solid rgb(14, 117, 14);
+}
+
+#door:hover {
+    box-shadow: 2px 2px 2px 2px;
+}
+
+#rock {
+    left: 1250px;
+    top: 10px;
+    animation: fadeInRock 45s;
+    animation-iteration-count: 1;
+}
+
+#rock:hover {
+    opacity: 1.0
+}
+
+#rock2 {
+    top: 100px;
+    opacity: 1.0;
+    animation: fadeInRock 180s;
+    animation-iteration-count: 1; 
+}
+
+    @keyframes fadeInRock {
+        0% {
+         opacity: 2%   
+         /* object doesn't need the seimicolon ; */
+        }
+        20% {
+         opacity: 10%
+        }
+        40% {
+         opacity: 20%        
+        }
+        60% {
+         opacity: 30%  
+        }
+        80% {
+         opacity: 40%   
+        }
+        100% {
+        opacity: 50%
+        }
+    }
+#rock:hover {
+    cursor: pointer;
+}
+
+#flashlight {
+    left: 440px;
+    top: 295px;
+    border: 2px solid rgb(11, 17, 3);
+
+}
+
+.fakeFlicker {
+    animation: yellowToBlack 800ms;
+    animation-iteration-count: 1;
+}
+@keyframes yellowToBlack {
+    0% {
+        border: 2px solid rgb(11, 17, 3);
+    }
+    30% {
+        border: 2px solid rgb(240, 224, 80);
+        transform: rotate(-25deg);
+    }
+    70% {
+        border: 5px solid rgb(225, 228, 108);
+    }
+    100% {
+        border: 2px solid rgb(11, 17, 3)
+    }
+}
+
+.lightFlicker {
+    animation: onOffLight 800ms;
+    animation-iteration-count: 1;
+}
+
+@keyframes onOffLight {
+    0% {
+        height: 135px;
+        width: 24px;
+        opacity: 0.0;
+    }
+    20% {
+        height: 115px;
+        width: 22px;
+        opacity: 0.4;
+    }
+    25% {
+        height: 135px;
+        width: 22px;
+        opacity: 0.4;
+    }
+    40% {
+        height: 60px;
+        width: 18px;
+        opacity: 0.2;
+    }
+    100% {
+        height: 155px;
+        opacity: 0.0;
+        width: 24px;
+    }
+}
+    .lightFlicker2 {
+         animation: onLight 20s;
+        animation-iteration-count: 1; 
+    }
+
+    .flashLightFlicker2 {
+        animation: onLight2 20s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes onLight {
+        0% {
+            transform: rotate(1deg); 
+        }
+        20% {
+            transform: rotate(1deg);
+        }
+        25% {
+            transform: rotate(-10deg);
+            height: 175px;
+            background-color: rgb(240, 224, 80);
+            border: 2px solid rgb(255, 228, 108);
+        }
+        30% {
+            transform: rotate(8deg);
+            height: 45px;
+        }
+        35% {
+            transform: rotate(-16deg);
+            height: 165px;
+        }
+        0% {
+            transform: rotate(-40deg);
+        }
+    }
+
+    @keyframes onLight2 {
+        0% {
+            transform: rotate(1deg); 
+        }
+        20% {
+            transform: rotate(1deg);
+        }
+        25% {
+            transform: rotate(-10deg);
+        }
+        30% {
+            transform: rotate(8deg);
+        }
+        35% {
+            transform: rotate(-16deg);
+        }
+        0% {
+            transform: rotate(-40deg);
+        }
+    }
+
+#beamOfLight1 {
+    display: none;
+    height: 135px;
+    width: 24px;
+    border: 2px solid rgb(240, 224, 80);
+    background-Color: rgb(255, 228, 108);
+    border-radius: 80%;
+    position: relative;
+    left: 580px;
+    top: 60px;
+
+}
+    </style>
+    <body>
+        <h1>The door slams behind you! <span>DOO</span> you look for clues?</h1>
+
+
+            <audio>
+                <audio src="fx/trail/flicker1.wav" id="flicker1" type="audio/wav"></audio>
+                <audio src="fx/trail/flicker2.wav" id="flicker2" type="audio/wav"></audio>
+                <audio src="fx/trail/flicker3.wav" id="flicker3" type="audio/wav"></audio>
+                <audio src="fx/trail/flickerClick.wav" id="click" type="audio/wav"></audio>
+                <audio src="fx/trail/doorCreak.wav" id="creak" type="audio/wav"></audio>
+            </audio>
+
+                <button type="submit" id="rock" class="btn" onclick="rockFakeOut()"></button>
+                <button type="submit" id="rock2" class="btn" onclick="revealTheSqueak()"></button>
+
+                <button type="submit" class="hidden" id="door" onclick="goBack()">
+                    <p>You hear the Door Sneak open behind you...<br> DOO you go back?</p>
+                </button>
+
+                <button class="btn" type="submit" id="flashlight" onclick="flash1()" onmouseover="secondBoxShadow()" onmouseout="backToBlack()"></button>
+                <div id="beamOfLight1"></div>
+
+        <script>
+            document.body.style.backgroundImage = "url('ghoulsnblocks/ghoul2.jpeg')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+
+// AUDIO SECTION
+let flicker1 = new Audio();
+flicker1.src = "fx/trail/flicker1.wav";
+let flicker2 = new Audio();
+flicker2.src = "fx/trail/flicker1.wav";
+let flicker3 = new Audio();
+flicker3.src = "fx/trail/flicker1.wav";
+let click = new Audio();
+click.src = "fx/trail/flickerClick.wav";
+let creak = new Audio();
+creak.src = "fx/trail/doorCreak.wav";
+
+let clickSound = false;
+
+const door = document.getElementById('door');
+door.style.backgroundImage = "url('icons/doorknob.png')";
+
+const rock = document.querySelector('#rock');
+rock.style.backgroundImage = "url('icons/rocks.png')";
+
+const rock2 = document.getElementById('rock2');
+rock2.style.backgroundImage = "url('icons/rocks.png')";
+
+const light = document.querySelector('#flashlight');
+light.style.backgroundImage = "url('icons/torch.png')";
+
+const lightBeam = document.getElementById('beamOfLight1');
+
+const rockFakeOut = () => {
+    rock.style.display = "none";
+}
+                           
+wholeCounter = [];
+counter = "";
+
+const flash1 = () => {
+    let clickSound = true;
+    console.log(clickSound);
+    counter += counter;
+    wholeCounter.push(counter);
+    console.log(wholeCounter);
+    if (wholeCounter.length === 1) {
+        flickerFake();
+        flicker2.play();
+        lightBeam.style.display = "block";
+        lightBeam.classList.add('lightFlicker');
+        lightBeam.style.opacity = "0.0";
+    
+    } else if (wholeCounter.length === 2) {
+        click.play();
+        flicker2.play();
+        asyncAnimationWrapper();
+    }
+    
+}
+flickerFake = () => {
+    light.classList.add('fakeFlicker');
+}
+
+const lightBackOn = function() {
+    console.log("lights go on");
+    return new Promise(resolve => {
+      setTimeout(function() {
+        resolve("light1");
+        lightBeam.style.opacity = "1.0";
+        console.log('nice and easy');
+      }, 1000);
+    });
+  };
+
+  const lightAnimate = function() {
+    console.log("terribly ugly but a good idea. This was just supposed to be a page with a simple back button saying you're locked out!");
+    return new Promise(resolve => {
+      setTimeout(function() {
+        resolve("light2");
+
+        lightBeam.classList.add('lightFlicker2');
+        light.classList.add('flashLightFlicker2');
+        console.log('nice and easy');
+      }, 2000);
+    });
+  };
+
+  const lightsOut = function() {
+      return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("light3");
+            lightBeam.style.display = "none";
+        }, 12500)
+      })
+  }
+
+const asyncAnimationWrapper = async function() {
+    const light1 = await lightBackOn();
+    const light2 = await lightAnimate();
+    const light3 = await lightsOut();
+    console.log(light1);
+    console.log(light2);
+    console.log(light3);
+}
+
+creakCounterWhole = [];
+creakCounter = "";
+
+const revealTheSqueak = () => {
+  creakCounter += creakCounter;
+  creakCounterWhole.push(creakCounter);
+  if (creakCounterWhole.length === 1) {
+    creak.play();
+    door.classList.remove('hidden');
+  } else if (creakCounterWhole.length === 2) {
+ 
+    door.addEventListener('click', goBack);
+  }
+
+}
+const secondBoxShadow = () => {
+  
+    if (clickSound === true) {
+        flicker1.play();
+    }
+    light.style.boxShadow = "5px 6px 7px rgb(225, 228, 108)";
+}
+const backToBlack = () => {
+    light.style.border = "3px solid rgb(11, 17, 3)";
+    light.style.boxShadow = "2px 3px 1px rgb(255, 228, 108)";
+}
+
+const goBack = () => {
+  window.location.href = "multipleOptions.html";
+}
+
+
+        </script>
+    </body>
+</html>

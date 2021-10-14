@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Munchies Maze</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <!-- have to link up all the stylesheets. -->
+    </head>
+    <style>
+body {
+    overflow: hidden;
+}
+
+
+.container {
+    color: white;
+    font-weight: bold; 
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-content: center;
+
+}
+
+.container p {
+    align-items: center;
+    align-self: center;
+}
+
+span {
+    color: rgb(71, 10, 71);
+    margin: 0px 50px;
+    font-size: 45px;
+}
+
+span:hover {
+    text-shadow: 3px 3px 3px rgb(141, 137, 137)
+}
+
+.btn {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 3px solid rgb(14, 117, 14);
+    margin: 100px 100px 0px 0px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+#no {
+    color: red;
+    font-size: 84px;
+    position: relative;
+    top: -95px;
+}
+
+#scared:hover {
+    cursor: pointer;
+}
+
+.mouseOverSection {
+    background-color: clear;
+    background-size: 100% 100%;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.unhidden {
+    display: block;
+}
+
+
+    </style>
+    <body>
+        <div class="mouseOverSection">
+        <div class="container">
+            <h1>The Gang's Hungry <br> and notices a castle!</h1>
+            <br>
+            <p>Look for food: <span>Doo you?<span></p>
+        
+                <!-- <a href="/Users/chasethrillz/Desktop/mystery-munchies-maze/drawbridge.html"> -->
+                    <!-- <a href="/Users/me/Desktop/mystery-munchies-maze/drawbridge.html"> -->
+                        <div class="prePage">
+                            <button class="btn" id="prePageButton" type="submit" onclick="realPage()"></button>
+
+                        </div>
+
+                       <div class="hidden" id="pageButtons">
+                <button type="submit" class="btn" id="food" onclick="changePath()"></button>
+                <!-- </a> -->
+                        
+                    <!-- hash the link out? -->
+                <button type="button" class="btn" id="scared" onclick="scaredPath()"></button>
+                
+                
+                        </div>
+            <!-- USE A BUTTON WRAPPED IN AN A-TAG TO TAKE YOU TO OTHER HTML PAGE! -->
+                  
+            <!-- FX SECTION -->
+            <audio>
+                <audio src="fx/trail/loadinglightning.wav" id="lightningSound" type="audio/wav"></audio>
+            </audio>
+            <!-- FX SECTION END -->
+        </div>
+    </div>
+        <script>
+
+const prePageClick = document.querySelector('#prePageButton');
+console.log(prePageClick);
+const realPageClick = document.querySelector('#prePageButton');
+console.log(realPageClick);
+
+let lightningSound = new Audio();
+lightningSound.src = "fx/trail/loadinglightning.wav";   
+
+document.body.style.backgroundImage = "url('entrance.jpeg')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat"; 
+
+const food = document.querySelector('#food');
+food.style.backgroundImage = "url('icons/sandwich.png')";
+food.style.backgroundSize = "cover";
+food.style.backgroundRepeat = "no-repeat";
+console.log(food);
+
+prePageClick.style.backgroundImage = "url('icons/torch.png')";
+prePageClick.style.backgroundSize = "cover";
+prePageClick.style.backgroundRepeat = "no-repeat";
+
+const scared = document.querySelector('#scared');
+scared.style.backgroundImage = "url('icons/ghost.png')";
+scared.style.backgroundSize = "cover";
+scared.style.backgroundRepeat = "no-repeat";
+
+const realPage = () => {
+    lightningSound.play();
+    pageButtons.classList.remove('hidden');
+    pageButtons.classList.add('unhidden');
+    prePageClick.classList.add('hidden');
+}
+const changePath = () => {
+    document.location.href="drawbridge.html";
+
+}
+const scaredPath = () => {
+    document.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+
+
+
+        </script>
+
+    </body>
+</html>
+

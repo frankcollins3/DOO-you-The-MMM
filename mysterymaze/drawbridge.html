@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          body {
+    background-image: url('proceedTrail/drawbridge1.jpeg');
+}
+
+.drawbridgeContainer {
+    margin: 100px;
+}
+
+.btn {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+#sneak {
+    position: relative;
+    left: 2000px;
+    top: 1000px;
+}
+
+.btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+}
+
+.hidden { 
+    display: none;
+}
+
+.unhidden {
+    display: block;
+}
+
+#hiddenLever2 {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: relative;
+    left: 870px;
+    top: 390px;
+    padding: 5px 5px;
+}
+
+label {
+    z-index: 1;
+    color: rgb(71, 10, 71);
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+      </style>  
+    </head>
+    <body>
+        <div class="drawbridgeContainer">
+           
+                <button type="button" class="btn" id="lever" onclick="buttonReveal()"></button>
+                <label for="lever">Pull The Lever?</label>
+
+                <button type="button" class="btn" id="sneak" onclick="goBack()">
+                    <label for="sneak">Or Go Around Back?</label>
+                </button>
+            
+                                <!-- changePath1() -->
+                
+             <div class="hiddenContainer" class="hidden"></div>
+                <button type="button" class="hidden" id="hiddenLever2" onclick="pathAhead()"> </button>
+                   
+                    </div>
+                
+                <audio>
+                    <audio src="icons/trail/drawbridge.wav" type="audio/wav" autoplay="false"></audio>
+                </audio>
+
+        
+        <script>
+const drawBridgeSound = new Audio();
+drawBridgeSound.src = "fx/trail/drawbridge.wav";
+
+document.body.style.backgroundImage = "url('proceedTrail/drawbridge1.jpeg')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+
+const  hidden = document.querySelector('.hiddenContainer');
+
+const lever = document.querySelector('#lever');
+lever.style.backgroundImage = "url('icons/control-lever.png')";
+lever.style.backgroundSize = "cover";
+lever.style.backgroundRepeat = "repeat";
+
+const goAroundBack = document.querySelector('#sneak');
+console.log(goAroundBack);
+goAroundBack.style.backgroundImage = "url('icons/back-button.png')";
+goAroundBack.style.backgroundSize = "100% 100%";
+
+
+const lever2 = document.querySelector('#hiddenLever2');
+lever2.style.background = "url('icons/control-lever.png')no-repeat";
+lever2.style.backgroundSize = "100% 100%";
+// lever2.style.boxShadow = "2px 2px 2px white";
+lever2.style.border = "3px solid white";
+
+const buttonReveal = () => {
+    drawBridgeSound.play();    
+    lever2.classList.remove('hidden');
+    lever2.classList.add('btn');
+}
+
+const goBack = () => {
+    window.location.href="backOfCastle.html";
+}
+
+const pathAhead = () => {
+    window.location.href="scoobydoostairs.html";
+}
+
+
+
+
+        </script>
+    </body>
+</html>

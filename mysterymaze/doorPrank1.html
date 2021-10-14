@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="css/doorPrank1.css"> -->
+        <style>
+       body {
+           /* background-color: blue;  */
+           background-image: url('ghoulsnblocks/door1.jpeg');
+           /* background-size: 100% 100%; */
+           background-size: cover;
+           background-repeat: no-repeat;
+           overflow: hidden;
+           }
+           .container {
+               display: flex;
+               justify-content: center;
+                padding: 5px;
+                margin: 0 auto;
+                position: relative;
+                top: 200px;
+                left: 100px;
+                /* left: 150px; */
+                /* left: 200px; */
+           }
+           .container h1 {
+               display: flex;
+               flex-wrap: wrap;
+               align-self: flex-end;
+               font-size: 45px;
+               position: relative;
+               top: -100px;
+           }
+          .container p {
+              padding: 5px; 
+              margin: 0 auto;
+              align-items: center;
+              font-size: 35px;
+              position: relative;
+              top: 75px;
+          }
+          #scoobyText {
+              padding-top: 80px;
+            color: rgb(82, 6, 97);
+            text-shadow: 2px 1px 1px white; 
+            font-size: 49px;
+          }
+     
+       .btn {
+           height: 85px;
+           width: 85px;
+           border-radius: 50%;
+           background-image: url('icons/scared1.png');
+           background-size: cover;
+           background-repeat: no-repeat;
+           position: relative;
+           padding: 10px;
+           margin: 10px auto;
+
+       }
+        .btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+        }
+       
+       section {
+           display: flex;
+           flex-wrap: wrap;
+
+       }
+       label {
+           position: relative;
+           top: 20px;
+           color: rgba(46, 41, 41, 0.856);
+           text-shadow: 0.5px 0.5px 0.5px rgb(82, 6, 97);
+           font-size: 22px;
+           padding: 10px 0;
+        
+       }
+        </style>
+        <!-- USING INTERNAL STYLING JUST TO CUT DOWN ON THE EXTENSIVE HTML/CSS/JS LINKING -->
+    </head>
+    <body>
+            
+              <div class="container">
+                <h1 id="scoobyText">Like, not much to Doo here!</h1>
+                <section>
+                    <a href="multipleOptions.html">
+                        <button class="btn" type="submit" id="goback"> </button>
+                    </a>
+                        <label for="back button" name="buttonLabel">GET OUTTA HERE</label>
+                </div>
+                </section>         
+                        
+        <script src="js/doorPrank1.js" async defer></script>
+    </body>
+</html>

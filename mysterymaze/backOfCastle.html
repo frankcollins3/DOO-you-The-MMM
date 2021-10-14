@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/backOfCastle.css">
+    </head>
+    <style>
+
+body {
+    background-image: url('http://simpleandinteresting.files.wordpress.com/2012/06/creepy-old-house.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.showPath {
+    height: 500px;
+    width: 700px;
+}
+
+.showPath:hover {
+    box-shadow: 2px 2px 1px rgb(14, 117, 14);
+}
+
+.btn {
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+}
+
+.showPath2 {
+    height: 400px;
+    width: 300px;
+    position: relative;
+    left: 1600px;
+    top: -300px;
+    display: flex;
+    justify-content: center;
+}
+
+.showPath2:hover {
+    box-shadow: 2px 2px 1px rgb(14, 117, 14);
+}
+
+
+.showPath2 p {
+    color: white;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+#stonePath {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    left: 75px;
+    top: 280px;
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+
+.btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+}
+
+.windowContainer2 {
+    display: flex;
+}
+
+#window2 {
+    position: relative;
+    left: 80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.windowContainer2 p {
+    color: white;
+    position: relative;
+    left: 500px;
+    top: 300px;
+}
+    </style>
+    <body>
+            <section class="showPath">
+                <h1> Zoinks, what a window Scoob <br>
+                    like.. we probably could've just snuck back here. HAHA!</h1>
+                    
+                    <div class="windowContainer2">
+                        <p>Head upstairs, <br>
+                            climb in through a window, <br>
+                            and run to safety</p>
+                         
+                                <button class="btn" type="submit" id="window2" onclick="windowClimb()"></button> 
+            </section>
+                            
+            <section class="showPath2">
+                <div class="pathContainer">
+                    <p>Look for Clues and Food</p>
+                    <button class="btn" type="submit" id="stonePath" onclick="multiProceed()"></button>
+                </div>
+            </section>
+        </div>
+                <audio>
+                    <audio src="fx/trail/thisway.wav" type="audio/wav" id="thisWay";> </audio>
+                </audio>
+
+                <script>
+
+let thisWay = new Audio();
+thisWay.src="fx/trail/thisway.wav";
+
+const pathButton = document.querySelector('#stonePath');
+pathButton.style.backgroundImage = "url('icons/torch.png')";
+
+const windowButton = document.querySelector('#window2');
+windowButton.style.backgroundImage = "url('icons/open-window.png')";
+
+const windowClimb = () => {
+    window.location.href = "scoobydoostairs.html";
+}
+
+const proceed = () => {
+    window.location.href = "stoneDoor.html";
+}
+
+
+let wholeCounter = [];
+let counter = "";
+
+const multiProceed = () => {
+    counter += counter;
+    wholeCounter.push(counter);
+    console.log(wholeCounter);
+
+    if (wholeCounter.length === 1) {
+        thisWay.play();
+    } else if (wholeCounter.length === 2) {
+        window.location.href="stoneDoor.html";
+    }
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+            
+                   
+                            

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+    overflow:hidden;
+}
+
+#containerContainer {
+   display: flex;
+   flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 33%;
+}
+
+.ghoulContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 35px;
+}
+
+.ghoulContainer span {
+    color: rgb(82, 6, 97);
+    position: relative;
+    left: 200px;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+}
+
+.backDownStairsContainer {
+    position: relative;
+    left: 200px;
+    height: 150px;
+    width: 180px;
+    display: flex;
+}
+
+.windowContainer {
+    position: relative;
+    left: 200px;
+    height: 150px;
+    width: 180px;
+    display: flex;
+    
+}
+
+.backDownStairsContainer p {
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+}
+
+.backDownStairsContainer:hover {
+   text-shadow: 2px 1px 5px rgb(71, 10, 71);
+}
+
+.windowContainer:hover {
+   text-shadow: 2px 1px 5px rgb(71, 10, 71);
+}
+
+#backStairs {
+    background-color: blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    align-self: center;
+}
+
+#openWindow {
+    background-color: green;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    align-self: center;
+}
+  
+        </style>
+    </head>
+    <body class="otherBackground">
+            <div class="ghoulContainer">
+                <h1>
+                    We find that we are not the only guests in the haunted Mansion.<br>
+                    <span>What DOO you DOO?</span>
+                </h1>
+            </div>
+
+                <div id="containerContainer" onmouseover="scaleContainer()">
+            <div class="backDownStairsContainer">
+                <p>BACK DOWNSTAIRS!</p> 
+                <button type="submit" class="btn" id="backStairs" onclick="backDownstairs()"></button>
+             </div>
+   
+             <div class="windowContainer">
+                 <p>JUMP OUT OF WINDOW</p>
+                 <button type="submit" class="btn" id="openWindow" onclick="windowMultiFunc()"></button>
+                </div>
+                </div>
+
+            <audio>
+                <audio src="fx/trail/wait.wav" type="audio/wav" id="waitSound"></audio>
+            </audio>
+
+            <audio>
+                <audio src="fx/trail/loadinglightning.wav" id="lightningSound" type="audio/wav"></audio>
+            </audio>
+                
+                      <script>
+                            document.body.style.backgroundImage = "url('ghoulsnblocks/ghoul1.png')";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize = "cover";
+
+const stairButton = document.getElementById('backStairs');
+stairButton.style.backgroundImage = "url('icons/scared1.png')";
+stairButton.style.backgroundSize = "cover";
+stairButton.style.backgroundRepeat = "no-repeat";
+
+const windowButton = document.getElementById('openWindow');
+windowButton.style.backgroundImage = "url('icons/open-window.png')";
+
+const containerWrap = document.getElementById('containerContainer');
+
+let wait = document.querySelector('#waitSound');
+
+let waitSound = new Audio ();
+waitSound.src= "fx/trail/wait.wav";
+
+let lightningSound = new Audio();
+lightningSound.src = "fx/trail/loadinglightning.wav";   
+
+const backDownstairs = () => {
+    window.location.href = "scoobydoostairs.html";
+}
+
+const windowJumpSound = () => {
+    waitSound.play(); 
+}
+
+const windowJump = () => {
+    window.location.href = "backOfCastle.html";
+}
+let wholeCounter = [];
+let counter = "";
+
+const windowMultiFunc = () => {
+    counter += counter;
+    wholeCounter.push(counter);
+    let click1 = false;
+    let click2 = false;
+     
+    if (wholeCounter.length === 1) {
+        windowJumpSound();
+    } else if (wholeCounter.length ===2) {
+        windowJump();
+    }
+}
+
+const scaleContainer = () => {
+    containerWrap.style.transform = "scale(1.5)";
+
+}
+
+                      </script>
+                    </body>
+                </html>
+                    

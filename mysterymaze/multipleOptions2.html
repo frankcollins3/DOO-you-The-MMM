@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+                body {
+    padding: 0;
+}
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 500px 880px 0px 0px;
+}
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 50px;
+    padding-top: 500px;
+    
+}
+.spider1 {
+    opacity: 0.0; 
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -150px;
+    left: 33px;
+}
+#spider2 {
+    opacity: 0.0;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -180px;
+}
+#broom {
+    opacity: 0.0;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 100px;
+    top: 5px;
+}
+.broomFade {
+    animation: fadeIn 7s;
+    animation-iteration-count: 1;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 0.3
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+.spiderCrawl {
+    animation: crawl 5s;
+    animation-iteration-count: 1;
+}
+@keyframes crawl {
+    0% {
+    transform: translateY(5px);
+    }
+    10% {
+        transform: translateY(10px);
+    }
+    20% {
+        transform: translateY(15px);
+    }
+    30% {   
+        transform: translateY(25px);
+    }
+    40% {
+        transform: translateY(40px);
+    }
+    50% {
+        transform: translateY(55px);
+    }
+    60% {
+        transform: translateY(85px);
+    }
+    70% {
+        transform: translateY(105px);
+    }
+    80% {
+        transform: translateY(115px);
+    }
+    90% {   
+        transform: translateY(130px);
+    }
+    100% {
+        transform: translateY(150px);
+    }
+}
+h1 {
+    color: white;
+    text-align: center;
+
+}
+.btn {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.btn:hover {
+        border: 3px solid rgb(14, 117, 14);
+        box-shadow: 1px 2px 7px 3px;
+    }
+#door1 {
+    position: relative;
+}
+#door2 {
+    position: relative;
+}
+#door3 {
+    position: relative;
+}
+#door4 {
+    position: relative;
+}
+#door5 {
+    position: relative;
+}
+#door6 {
+    position: relative;
+}
+#door7 {
+    position: relative;
+}
+        </style>
+    </head>
+    <body>
+<h1> Here Again? There's Got to Be A Way Out! </h1>
+<div class="flexContainer">
+<div id="broom"></div>
+<div class="spider1"></div>
+<img src="icons/spider2.png" id="spider2">
+</div>
+    
+        <div class="buttonGrid">
+        <section class="section" id="section1">
+                <button class="btn" type="submit" id="door1" onclick="door1()"></button>
+        </section>
+        <section class="section" id="section2">
+                <button class="btn" type="submit" id="door2" onclick="door2()"></button>
+            </a>
+        </section>
+        <section class="section" id="section3">
+                <button class="btn" type="submit" id="door3" onclick="door3()"></button>
+        </section>
+    
+        <section class="section" id="section4">
+                <button class="btn" type="submit" id="door4" onclick="door4()"></button>
+        </section>
+        <section class="section" id="section5">
+                <button class="btn" type="submit" id="door5" onclick="door5()"></button>
+        </section>
+        <section class="section" id="section6">
+                <button class="btn" type="submit" id="door6" onclick="door6()"></button>
+        </section>
+        <section class="section" id="section7">
+                <button class="btn" type="submit" id="door7" onclick="door7()"></button>
+        </section>
+        </div>
+
+        </section>
+        <script>
+                const doorNumber1 = document.getElementById('door1');
+const doorNumber2 = document.getElementById('door2');
+const doorNumber3 = document.getElementById('door3');
+const doorNumber4 = document.getElementById('door4');
+const doorNumber5 = document.getElementById('door5');
+const doorNumber6 = document.getElementById('door6');
+const doorNumber7 = document.getElementById('door7');
+
+const flexContainer = document.querySelector('.flexContainer');
+
+const spider1 = document.querySelector('.spider1');
+spider1.style.backgroundImage = "url('icons/spider.png')";
+
+const spider2 = document.getElementById('spider2');
+
+const broom = document.querySelector('#broom');
+broom.style.backgroundImage = "url('icons/broom.png')";
+
+doorNumber1.style.background = "url('icons/doorknob2.png')";
+doorNumber1.style.backgroundSize = "cover";
+doorNumber1.style.backgroundRepeat = "no-repeat";
+
+doorNumber2.style.background = "url('icons/doorknob2.png')";
+doorNumber2.style.backgroundSize = "cover";
+doorNumber2.style.backgroundRepeat = "no-repeat";
+
+doorNumber3.style.background = "url('icons/doorknob2.png')";
+doorNumber3.style.backgroundSize = "cover";
+doorNumber3.style.backgroundRepeat = "no-repeat";
+
+doorNumber4.style.background = "url('icons/doorknob2.png')";
+doorNumber4.style.backgroundSize = "cover";
+doorNumber4.style.backgroundRepeat = "no-repeat";
+
+doorNumber5.style.background = "url('icons/doorknob2.png')";
+doorNumber5.style.backgroundSize = "cover";
+doorNumber5.style.backgroundRepeat = "no-repeat";
+
+doorNumber6.style.background = "url('icons/doorknob2.png')";
+doorNumber6.style.backgroundSize = "cover";
+doorNumber6.style.backgroundRepeat = "no-repeat";
+
+doorNumber7.style.background = "url('icons/doorknob2.png')";
+doorNumber7.style.backgroundSize = "cover";
+doorNumber7.style.backgroundRepeat = "no-repeat";
+
+document.body.style.backgroundImage = "url('proceedTrail/multipleOptions2.png')";
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
+
+const broomPromise = function() {
+    console.log('checking the broom out');
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("broomCheck");
+            if (broom.getAttribute('style')!== null) {
+                console.log("now you're sweepin' with crisco"); 
+                broom.classList.add('broomFade');
+            }
+        }, 4000)
+    })
+}
+const broomPromise2 = function() {
+    console.log('having a second look...');
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("broomAgain");                      
+            broom.style.display = "none";
+        }, 8000)
+    })
+}
+
+const asyncBroomWrapper = async function() {
+    const broomCheck = await broomPromise();
+    console.log(broomCheck);
+    const broomAgain = await broomPromise2();
+    console.log(broomAgain);
+    applyEventsToChildren();
+}
+
+const applyEventsToChildren = () => {            
+
+    let checkChildren = document.querySelectorAll('.flexContainer div');
+    for (i of checkChildren) {
+        i.addEventListener('click', function() {
+            spider1.style.opacity = "1.0";
+           broom.style.opacity = "1.0";
+            spider1.addEventListener('mouseover', function() {
+                spider1.style.display = "none";
+                broom.style.display = "none";
+                spider2.style.opacity = "1.0";
+                spider2.classList.add('spiderCrawl');
+            })
+        })
+        
+    }
+}        
+    broom.addEventListener('mouseover', function() {
+        asyncBroomWrapper();
+        spider1.style.opacity = "0.2";
+        applyEventsToChildren();
+    });
+let wholeCounter = [];
+let counter = "0";
+const door1 = () => {
+    window.location.href = "underWaterGhoul.html";
+};
+const door2 = () => {
+    counter ++;
+    wholeCounter.push(counter);
+    if (counter === 1) {
+        console.log("nice one");
+    } else if (counter ===2) {
+        window.location.href= "newSpot"
+    }
+}
+const door3 = () => {
+    window.location.href= "multipleOptions.html";
+}
+const door4 = () => {
+    window.location.href= "multipleOptions.html";
+}
+const door5= () => {
+    window.location.href= "lockedDoor.html"
+}
+const door6 = () => {
+    window.location.href= "multipleOption2Ghoul3.html"
+}
+const door7 = () => {
+    window.location.href = "multipleOptions.html";
+}
+        </script>
+    </body>
+</html>

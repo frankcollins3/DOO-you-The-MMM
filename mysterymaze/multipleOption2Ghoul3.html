@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-image: url('ghoulsnblocks/ghoul4.jpeg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .btn {
+                height: 85px;
+                width: 85px;
+                border-radius: 50%;
+            }
+            #window2 {
+                position: relative;
+                left: 80px;
+                background-image: url('icons/open-window.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: relative;
+                left: 800px;
+                top: -70px;
+            }
+            h1 {
+                color: white;
+                font-family: verdana;
+                font-size: 36px;
+            }
+        </style>
+    </head>
+    <body> 
+        <h1> Like, did you hear the door lock behind us scooby?<br>
+            We'll have to take the window! </h1>
+            <section>
+                    <button class="btn" type="submit" id="window2" onclick="jumpOut()"></button> 
+                    <!-- back of castle -->
+            </section>
+        <!-- set interval to make you jump out of the window? -->
+        <script>
+            const jumpOut = () => {
+                window.location.href= "backOfCastle.html";
+            }
+        </script>
+    </body>
+</html>

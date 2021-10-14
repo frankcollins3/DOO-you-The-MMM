@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Doo You? Munchie Mystery Maze</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+    width: 900px;
+    height: 724px;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin: 50px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(71, 10, 71);
+    color: rgba(255, 255, 255, 0.575);
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px;
+}
+
+.sectionContainer {
+    display: flex;
+}
+
+.section {
+    width: 400px;
+    height: 724px;
+    display: flex;
+}
+
+.section:hover {
+    cursor: pointer;
+}
+
+.btn {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    border: 3px solid rgb(14, 117, 14);
+    box-shadow: 1px 2px 7px 3px;
+}
+
+#sectionL {
+    position: relative;
+    top: 200px;
+    left: 300px;
+}
+
+#sectionR {
+    position: relative;
+    left: 1300px;
+    top: 330px;
+}
+
+#proceed {
+    position: relative;
+    top: 475px;
+    left: 475px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+        </style>
+    </head>
+    <body>
+       <h1>
+           Everyone's Hungry. <br>
+           DOO you go left, right, or forward...<br>
+           DOO YOU?!
+       </h1>
+            <div class="sectionContainer">
+            <section id="sectionL" class="section">
+                <button type="submit" class="btn" id="stairsL" onclick="upLeft()"></button>
+            </section>
+       
+            <section id="sectionR" class="section"> 
+                <button type="submit" class="btn" id="stairsR" onclick="upRight()"></button>        
+          
+    </section>
+            <button type="submit" class="btn" id="proceed" onclick="proceed()"></button>
+    </div>
+        <audio>
+            <audio src="fx/trail/roll.wav" id="rickR" type="audio/wav"></audio>
+        </audio>
+        <script>
+        let rickSound = new Audio();
+    rickSound.src= "fx/trail/roll.wav";
+
+    document.body.style.backgroundImage = "url('proceedTrail/scoobystairs2.jpeg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "norepeat";
+
+    const sections = document.getElementsByClassName('section');
+
+    const proceedButton = document.getElementById('proceed');
+    console.log(proceedButton);
+    proceedButton.style.backgroundImage= "url('icons/sandwich.png')";
+
+    const stairsL = document.querySelector('#stairsL');
+    console.log(stairsL);
+    stairsL.style.backgroundImage = "url('icons/stairsL.png')";
+
+    stairsL.style.backgroundSize = "cover";
+    stairsL.style.backgroundRepeat = "no-repeat";
+
+    const stairsR = document.querySelector('#stairsR');
+    stairsR.style.backgroundImage = "url('icons/stairsR.png')";
+    stairsR.style.backgroundSize = "cover";
+    stairsR.style.backgroundRepeat = "no-repeat";
+
+    const upLeft = () => {
+        window.location.href="multipleOptions.html";
+    }
+
+    const upRight = () => {
+        window.location.href="multipleOptionGhoul.html";
+    }
+
+    const proceed = () => {
+        rickSound.play();
+        proceedButton.style.border = "4px solid rgb(128, 54, 6)";
+
+    }
+
+
+        </script>
+    </body>
+</html>

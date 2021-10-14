@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/stoneDoor.css">
+    </head>
+        <style>
+            body {
+    background-image: url('http://scoobydoodaily.weebly.com/uploads/9/5/5/6/9556804/2480182_orig.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#boxWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+ .theIntro {
+    padding: 0;
+    height: 45px;
+    background-color: rgb(128, 54, 6);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+#pathMessage {
+    background-color: burlywood;
+    width: 100%;
+    height: 85px;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    top: 125px;
+    border: 4px solid rgb(71, 10, 71);
+    border-radius: 25%;
+}
+
+.rocks {
+    height: 50px;
+    width: 50px; 
+    border-radius: 50%;
+    border: 2px solid rgb(238, 176, 20);
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+#rockButton1 {
+    position: relative;
+    left: 300px;
+    opacity: 0.0;
+
+}
+
+#rockButton1:hover {
+    position: relative;
+    left: 300px;
+    opacity: 1.0;
+    animation: enlargeToHelp 60s ease-in;
+}
+
+@keyframes enlargeToHelp {
+    0% {
+        height: 55px;
+        width: 55px;
+    }
+    33% {
+        height: 85px;
+        width:  85px;
+    }
+    45% {
+        height: 125px;
+        width:  125px;
+    }
+    66% {
+        height: 150px;
+        width:  150px;
+    }
+    99% {
+        height: 175px;
+        width: 175px;
+    }
+}
+
+#rockButton2 {
+    position: relative;
+    left: 2000px;
+    opacity: 0.1;
+    transition: opacity 2s, transform 4s;
+}
+
+#rockButton2:hover {
+    opacity: 1.0;
+    transform: rotate(720deg);
+}
+
+#rockButton3 {
+    position: relative;
+    left: 500px;
+    top: -500px;
+    animation: vanish 30s ease-in;
+}
+
+@keyframes vanish {
+    0% {
+        opacity: 0.0;
+    }   
+    25% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.5;
+    }
+
+}
+
+.hidden {
+    display: none;
+}
+
+.messageBoxWrapper {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.messageBox {
+    color: rgb(235, 223, 223);
+    font-weight: bold;
+    font-size: 33px;
+    background-image: url('https://i.pinimg.com/originals/7e/c0/63/7ec0635f74c14d8ab20deb626c829f3c.jpg') ;
+    background-size: 100% 100%;
+    height: 330px;
+    width: 400px;
+    line-height: 23px;
+    padding: 20px 40px;
+    text-align: center;
+    line-height: 33px;
+    position: relative;
+
+}
+
+.messageBox2 {
+    color: blue;
+    font-weight: bold;
+}
+
+.pathMessage {
+    height: 50px;
+    width: 100%;
+    background-color: orange;
+}
+
+#stone-wall-form {
+    padding: 10px 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 80px;
+}
+.form-box {
+    padding: 20px 100px;
+}
+
+#buttonBox {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#messageReset {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+    align-self: center;
+}
+
+#messageReset:hover {
+    background-color: rgb(141, 20, 20);
+    box-shadow: 1px 2px 7px 3px;
+}
+
+label {
+    color: white;
+}
+
+#resetButton {
+    opacity: 60%;
+    
+}
+
+#resetButton:hover {
+    background-color: rgb(141, 20, 20);
+    border: 2px solid black;
+}
+
+.secondaryOptions {
+    display: hidden;
+    width: 20%;
+    position: relative;
+    left: 1100px;
+    top: -200px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+#goBack {
+    display: hidden;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    align-self: center;
+    align-items: center;
+    background-size: 100% 100%;
+    margin: 0px 215px;
+}
+
+
+
+        </style>
+
+
+
+    <body>
+    
+        <div id="boxWrapper">
+                <h1 class="theIntro">Finally! Someone in the house that isn't a monster!</h1>
+              <div class="messageBoxWrapper">
+                <div class="messageBox">
+                </div>
+                <button type="button" id="messageReset" onclick="ghostButton()"></button>
+            </div>
+        </div> 
+
+        <form id="stone-wall-form" action="#" method="get">
+            <div class="form-box" data-errormsg="">
+                <label for="characters"> I am leader of our crew here! </label>
+                <select name="characters" id="characters" form="stone-wall-form">
+                    <option value="Shaggy">Shaggy</option>     
+                    <option value="Scooby">Scooby</option>
+                    <option label="Fred" Value="Fred"></option>
+                    <option label="Daphne" value="Daphne"></option>
+                    <option label="Velma" value="Velma"></option>
+                </select>
+            </div>
+            <div class="form-box" data-errormsg="fuckoff" id="buttonBox">
+                    <button typ="reset" class="btn" id="resetButton">Reset</button>
+                    <button type="submit" class="btn" id="submitButton">Submit</button>
+                    </div>
+            </div>
+            <div class="form-box" data-errormsg="">
+                <label for="look-for">& we were just looking:</label>
+                <select name="look-for" id="lookFor" form="stone-wall-form">
+                    <option value="kitchen">for the kitchen!</option>
+                    <option value="explore">To explore!!!</option>
+                </select>
+            </div>
+            </form>
+            <div id="secondaryOptions">
+                <button type="button" class="hidden" id="goBack" onclick="goBack()" onmouseover="showLabel()">
+                    <label for="goBack" class="hidden" id="hiddenLabel">GO BACK</label>
+                    
+                </button>
+            </div>
+ 
+            <section> 
+                <!-- adding a 2nd class of rocks, to avoid manually setting the button sizings over and over through ID, caused a break in ability to toggle them invisible with classList.remove('hidden') -->
+                <a href="stoneDoor2.html" id="guessAnchor"> 
+                    <button type="button"  class="hidden" id="rockButton1"></button> 
+                    <!--  WOW IF YOU JUST TYPE IN www.google.com it assumes the local path from visual studio and adds user/computer/mysterymaze/www.google.com -->
+                </a>
+                <button type="button"  class="hidden" id="rockButton2"></button>
+                <button type="button"  class="hidden" id="rockButton3"></button>
+            </section>
+
+              <h2 id="pathMessage"> Who is the leader of your little crew here? And WHY are you in MY house?! </h2>
+
+        <script>
+            const stoneWallPage = document.getElementById('stone-wall-form');
+const introText = document.querySelector('.theIntro')
+const messageArea = document.querySelector('.messageBox');
+const messageReset = document.querySelector('#messageReset');
+const secondaryOptions = document.querySelector('#secondaryOptions');
+const backButton = document.querySelector('#goBack');
+const hiddenLabel = document.querySelector('#hiddenLabel');
+
+const guesscount = [];
+const guessA = document.getElementById('guessAnchor');
+
+messageReset.style.backgroundImage = "url('icons/ghost.png')";
+backButton.style.backgroundImage = "url('icons/back-button.png')";
+
+const hiddenSection = document.querySelector('.hiddenSection');
+console.log(hiddenSection);
+
+const rockButton1 = document.getElementById('rockButton1')
+const rockButton2 = document.getElementById('rockButton2')
+const rockButton3 = document.getElementById('rockButton3')
+
+rockButton1.style.backgroundImage = "url('icons/rocks.png')";
+rockButton1.style.backgroundSize = "cover";
+rockButton1.style.backgroundRepeat = "no-repeat";
+
+rockButton2.style.backgroundImage = "url('icons/rocks.png')";
+rockButton2.style.backgroundSize = "cover";
+rockButton2.style.backgroundRepeat = "no-repeat";
+
+rockButton3.style.backgroundImage = "url('icons/rocks.png')";
+rockButton3.style.backgroundSize = "cover";
+rockButton3.style.backgroundRepeat = "no-repeat";
+
+setTimeout (
+    function textVanish() {
+        introText.classList.add('hidden');
+        backButton.classList.remove('hidden');
+        backButton.classList.add('goBack');
+        
+    }, 3000);
+
+ stoneWallPage.addEventListener("submit", function(event) {
+     event.preventDefault(); // bookmarking learnpoint. knew e.preventDefault() to prevent 1 eventListnr from clicking another eventListnr. 
+  
+    let troupeLeader = stoneWallPage.elements[0].value;
+    let pathAhead = stoneWallPage.elements[3].value;
+
+    if (troupeLeader === "Shaggy" || troupeLeader === "Scooby") {
+            messageArea.style.background = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJU8oO3NfqmsW9VHorFvz_oHFzSNoT-4l_yA&usqp=CAU') no-repeat";
+            messageArea.style.backgroundSize = "100% 100%"; // was using 100% 100% in the shorthand and was being funny. 
+
+        if (pathAhead === "kitchen") {
+            localStorage.setItem('haveKey',  'true');
+            localStorage.setItem('spokeToMaster', 'true');
+            messageArea.innerHTML = `${troupeLeader} you're killin' me!<br> Well,<br> if you want snacks, <br> Go to the ${pathAhead},<br> and Fetch us some Snacks!<br>Here's a key!`;
+        }
+        if (pathAhead === "explore") {
+            rockButton1.classList.remove('hiddenSection');
+            console.log('lets go');
+            messageArea.innerHTML = `if you want to explore, ${troupeLeader},<br>Make sure the mutt<br> Doesn't break anything!<br> You have 3 guesses to <br> ${pathAhead}...<br> Touch the stones<br> To Find the Way Out!`;
+            rockButton1.classList.remove('hidden');
+            rockButton1.classList.add('rocks');
+            rockButton2.classList.remove('hidden');
+            rockButton2.classList.add('rocks');
+            rockButton3.classList.remove('hidden');
+            rockButton3.classList.add('rocks');
+        }
+    }
+
+    if (troupeLeader === "Fred" || troupeLeader === "Daphne" || troupeLeader === "Velma") {
+        messageArea.style.background = "url('icons/daphnefredvelma.jpeg') no-repeat";
+        messageArea.style.backgroundSize = "100% 100%";
+        messageArea.innerHTML = `ohhh, ${troupeLeader} and friends...<br> And you want to ${pathAhead} <br> I see....`
+        if (pathAhead === "kitchen") {
+            localStorage.setItem('haveKey',  'true');
+            localStorage.setItem('haveKey', 'true');
+            messageArea.innerHTML = `Well ${troupeLeader}, if you want some food, go to the ${pathAhead},<br> and grab us a bite!<br>Here's a key.`;
+        }
+        if (pathAhead === "explore") {
+            messageArea.innerHTML =`wow, full house and all, with ${troupeLeader} and the gang.<br> Sure, come ${pathAhead}, Touch the stones behind me...<br> You have 2 guesses`;
+            rockButton1.classList.remove('hidden');
+            rockButton1.classList.add('rocks');
+            rockButton2.classList.remove('hidden');
+            rockButton2.classList.add('rocks');
+            rockButton3.classList.remove('hidden');
+            rockButton3.classList.add('rocks');
+        }
+    }
+ });
+        const ghostButton = () => {
+            messageArea.style.backgroundImage = "url('https://i.pinimg.com/originals/7e/c0/63/7ec0635f74c14d8ab20deb626c829f3c.jpg')";
+            messageArea.style.backgroundSize = "100% 100%";
+            messageArea.innerHTML = "";
+        }
+
+        const goBack = () => {
+            window.location.href="backOfCastle.html";
+        }
+
+        const showLabel = () => {
+            hiddenLabel.style.color= "rgb(71, 10, 71)";
+            hiddenLabel.classList.remove('hidden');
+
+        }
+        let guessCount = [];
+        let counter = [];
+
+        rockButton1.addEventListener('click', function() {
+            console.log(guessCount);
+            if (guessCount.length > 1) {
+                guessA.removeAttribute('href');
+            }
+        })
+
+        rockButton2.addEventListener('click', function() {
+            counter += counter;
+            guessCount.push(counter);
+            console.log(guessCount);
+            if (guessCount.length > 1) {
+                guessA.removeAttribute('href');
+                rockButton1.style.display = "none";
+            }
+        })
+
+        rockButton3.addEventListener('click', function() {
+            counter += counter;
+            guessCount.push(counter);
+            console.log(guessCount);
+            if (guessCount.length > 1) {
+                guessA.removeAttribute('href');
+                messageArea.innerHTML = "The Wall Locked Up After You Lost<br> You'll have to go through the Kitchen.<br>Take this key and go get us some food!"; 
+                localStorage.setItem('haveKey',  'true');
+                localStorage.setItem('spokeToMaster', 'true');
+            }
+        })
+  
+
+
+
+        </script>
+    </body>
+</html>
