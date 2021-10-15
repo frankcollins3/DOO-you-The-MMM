@@ -7,7 +7,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-                body {
+.lockDisplay {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: peachpuff;
+    text-align: center;
+}
+
+/* .lockAnimation:after {
+    animation: locked 7s;
+    animation-iteration-count: 1;
+} */
+/* door2() -> toggle classList.add(.lockAnimation:after with content: "spelling out LOCKED didn't work.") using promises */
+
+
+
+body {
     padding: 0;
 }
 .flexContainer {
@@ -16,6 +31,15 @@
     justify-content: flex-end;
     margin: 500px 880px 0px 0px;
 }
+
+.lockDisplay {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    left: 15rem;
+
+}
+
 .buttonGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -152,6 +176,17 @@ h1 {
 #door7 {
     position: relative;
 }
+
+@media only screen and (max-width: 1100px) {
+    /* .lockDisplay {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    left: 15rem;
+} */
+}
+
+
         </style>
     </head>
     <body>
@@ -161,7 +196,13 @@ h1 {
 <div class="spider1"></div>
 <img src="icons/spider2.png" id="spider2">
 </div>
-    
+        
+        <!-- create a display box. 
+            use displayBox.style.innerHTML = "L" 'O" in an animation class that fires on door 2.
+        
+        -->
+        <div class="lockDisplay"></div>
+
         <div class="buttonGrid">
         <section class="section" id="section1">
                 <button class="btn" type="submit" id="door1" onclick="door1()"></button>
@@ -190,7 +231,12 @@ h1 {
 
         </section>
         <script>
-                const doorNumber1 = document.getElementById('door1');
+
+
+const lockMessage = document.querySelector('.lockDisplay');
+console.log(lockMessage);
+
+const doorNumber1 = document.getElementById('door1');
 const doorNumber2 = document.getElementById('door2');
 const doorNumber3 = document.getElementById('door3');
 const doorNumber4 = document.getElementById('door4');
@@ -298,13 +344,9 @@ const door1 = () => {
     window.location.href = "underWaterGhoul.html";
 };
 const door2 = () => {
-    counter ++;
-    wholeCounter.push(counter);
-    if (counter === 1) {
-        console.log("nice one");
-    } else if (counter ===2) {
-        window.location.href= "newSpot"
-    }
+    // lockMessage.classList.add('lockAnimation:after');
+    asyncLockWrapper();
+    lockMessage.removeEventListener('click');
 }
 const door3 = () => {
     window.location.href= "multipleOptions.html";
@@ -321,6 +363,107 @@ const door6 = () => {
 const door7 = () => {
     window.location.href = "multipleOptions.html";
 }
+
+const lPromise = function() {
+    console.log("L..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterL");
+            lockMessage.innerHTML = "L";
+        }, 300)
+    })
+}
+
+const oPromise = function() {
+    console.log("O..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterO");
+            lockMessage.innerHTML = "O";
+        }, 300)
+    })
+}
+
+const cPromise = function() {
+    console.log("C..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterC");
+            lockMessage.innerHTML = "C";
+        }, 300);
+    })
+}
+
+const kPromise = function() {
+    console.log("K..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterK");
+            lockMessage.innerHTML = "K";
+        }, 300);
+    })
+}
+
+const ePromise = function() {
+    console.log("E..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterE");
+            lockMessage.innerHTML = "E";
+        }, 300);
+    })
+}
+
+const dPromise = function() {
+    console.log("D..");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("letterD");
+            lockMessage.innerHTML = "D";
+        }, 300);
+    })
+}
+
+const dotdotPromise = function() {
+    console.log("....");
+    return new Promise(resolve => {
+        setTimeout(function() {
+            resolve("dotdot");
+            lockMessage.innerHTML = "....";
+        }, 500);
+    })
+}
+
+const asyncLockWrapper = async function() {
+    const theL = await lPromise();
+    const theO = await oPromise();
+    const theC = await cPromise();
+    const theK = await kPromise();
+    const theE = await ePromise();
+    const theD = await dPromise();
+    const theDot = await dotdotPromise();
+}
+
+                                    // const broomPromise2 = function() {
+                                    //     console.log('having a second look...');
+                                    //     return new Promise(resolve => {
+                                    //         setTimeout(function() {
+                                    //             resolve("broomAgain");                      
+                                    //             broom.style.display = "none";
+                                    //         }, 8000)
+                                    //     })
+                                    // }
+
+                                    // const asyncBroomWrapper = async function() {
+                                    //     const broomCheck = await broomPromise();
+                                    //     console.log(broomCheck);
+                                    //     const broomAgain = await broomPromise2();
+                                    //     console.log(broomAgain);
+                                    //     applyEventsToChildren();
+                                    // }
+
+
+
         </script>
     </body>
 </html>
