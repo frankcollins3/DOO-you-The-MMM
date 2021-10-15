@@ -23,7 +23,8 @@
 
 
 body {
-    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .flexContainer {
     display: flex;
@@ -178,12 +179,30 @@ h1 {
 }
 
 @media only screen and (max-width: 1100px) {
-    /* .lockDisplay {
-    height: 80px;
-    width: 80px;
-    position: relative;
-    left: 15rem;
-} */
+    body {
+        background-size: cover;
+    }
+    .flexContainer {
+        position: relative;
+        width: 30%;
+        align-content: flex-end;
+        margin: 0 auto;
+        margin-top: 20%;
+        margin-left: 35rem;
+    }
+    #broom {
+        height: 55px;
+        width: 55px;
+        border: 2px solid blue;
+        position: relative;
+    }
+    .spider1 {
+        margin-right: 20%;
+    }
+    #spider2 {
+        margin: 0;
+        border: 2px solid orange;
+    }
 }
 
 
