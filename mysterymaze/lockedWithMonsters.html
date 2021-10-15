@@ -44,8 +44,7 @@ h1 {
     width: 85px;
     border-radius: 50%;
     position: relative;
-    top: 500px;
-    left: 50px;
+    left: 10%;
     background-size: cover;
     background-repeat: no-repeat;
     border: 3px solid rgb(14, 117, 14);
@@ -56,8 +55,8 @@ h1 {
 }
 
 #rock {
-    left: 1250px;
-    top: 10px;
+    left: 90%;
+    top: -10%;
     animation: fadeInRock 45s;
     animation-iteration-count: 1;
 }
@@ -67,7 +66,8 @@ h1 {
 }
 
 #rock2 {
-    top: 100px;
+    left: 3rem;
+    top: -2rem;
     opacity: 1.0;
     animation: fadeInRock 180s;
     animation-iteration-count: 1; 
@@ -94,13 +94,16 @@ h1 {
         opacity: 50%
         }
     }
-#rock:hover {
+#rock:hover, #rock2:hover, #flashlight:hover {
     cursor: pointer;
 }
 
 #flashlight {
-    left: 440px;
-    top: 295px;
+    position: relative;
+    left: -2rem;
+    top: 15rem;
+    /* left: 440px;
+    top: 295px; */
     border: 2px solid rgb(11, 17, 3);
 
 }
@@ -222,10 +225,11 @@ h1 {
     background-Color: rgb(255, 228, 108);
     border-radius: 80%;
     position: relative;
-    left: 580px;
-    top: 60px;
+    left: 5rem;
 
 }
+
+
     </style>
     <body>
         <h1>The door slams behind you! <span>DOO</span> you look for clues?</h1>
