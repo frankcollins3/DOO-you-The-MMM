@@ -53,7 +53,17 @@
             top: 27rem;
             left: 2rem;
         }
+        @media only screen and (max-width: 1100px) {
+            #helmet {
+                transform: scale(0.4);
+                /* position: relative; redundant.. */ 
+                top: 3rem;
+                left: 1rem;
+            }
+        }
+        
         </style>
+        
        
         
     <body>
@@ -63,7 +73,7 @@
         
         <div class="buttonContainerFlex">
             <button type="submit"  id="sonarClick"></button>
-            <button type="submit" class="hidden"  id="helmet"></button>
+            <button type="submit" class="hidden"  id="helmet" onclick="goBack()"></button>
         </div>
 
 
@@ -72,6 +82,7 @@
         <script>
 
             let sonarSound = new Audio();
+            sonarSound.loop = true;
             sonarSound.src = "fx/trail/sonar.wav";
 
             const scubaEye = document.querySelector('#helmet');
@@ -95,6 +106,10 @@
                 console.log('how you doin that');
                 sonarSound.play();
             })
+
+            const goBack = () => {
+                window.location.href = "multipleOptions2.html";
+            }
         </script>
 
 
