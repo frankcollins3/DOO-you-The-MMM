@@ -7,23 +7,96 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
     </head>
     <style>
         body {
             background-image: url('https://animesuperhero.com/news/images/2010-11/scoobydoo/scoobydoo2.jpg');
         }
-      
+        .image {
+            background-image: url('https://animesuperhero.com/news/images/2010-11/scoobydoo/scoobydoo2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        button:hover {
+            border: 3px solid rgb(14, 117, 14);
+            box-shadow: 2px 2px 2px 2px;
+        }
+
+        .buttonContainerFlex {
+            display: flex;
+            flex-flow: column wrap;
+            /* justify-content: center; */
+            align-content: center;
+        }
+
+
+        #sonarClick {
+            height: 85px;
+            width:  85px;
+            border-radius: 50%;
+            background-color: green;
+            position: relative;
+            left: 7rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #helmet {
+            height: 300px;
+            width: 300px;
+            border: 2px solid grey;
+            border-radius: 50%;
+            position: relative;
+            top: 27rem;
+            left: 2rem;
+        }
+        </style>
        
-    </style>
-    <body class="image">
-        <button type="submit" class="btn"></button>
+        
+    <body>
+        <audio>
+            <audio src="fx/trail/sonar.wav" id="sonar" type="audio/wav"></audio>
+        </audio>
+        
+        <div class="buttonContainerFlex">
+            <button type="submit"  id="sonarClick"></button>
+            <button type="submit" class="hidden"  id="helmet"></button>
+        </div>
+
+
+        
+        
         <script>
-            const button1 = document.querySelector('.btn');
-            button1.addEventListener('click', function() {
-                document.body.classList.add('bodyToggle');
+
+            let sonarSound = new Audio();
+            sonarSound.src = "fx/trail/sonar.wav";
+
+            const scubaEye = document.querySelector('#helmet');
+            scubaEye.style.backgroundImage = "url('https://thumbs.gfycat.com/HairyLargeAlbacoretuna-size_restricted.gif')";
+            scubaEye.style.backgroundSize = "cover";
+            scubaEye.style.backgroundRepeate = "no-repeat";
+
+            
+
+            const sonarClickFx = document.querySelector('#sonarClick');
+            sonarClickFx.style.backgroundImage = "url('https://i.pinimg.com/originals/3c/b5/5e/3cb55e8204d41bd9c5b588e10740b373.png')";
+            sonarClickFx.style.backgroundSize = 'cover';
+            sonarClickFx.style.backgroundRepeat = "no-repeat";
+
+            sonarClickFx.addEventListener('click', function() {
+                scubaEye.classList.remove('hidden');
+                sonarClickFx.style.backgroundImage = "url('icons/back-button.png')";
+            sonarClickFx.style.backgroundSize = "cover";
+            sonarClickFx.style.backgroundRepeat = "no-repeat";
+               document.body.classList.add('image');
+                console.log('how you doin that');
+                sonarSound.play();
             })
-            console.log('atleast we got it'); 
         </script>
+
+
     </body>
 </html>
