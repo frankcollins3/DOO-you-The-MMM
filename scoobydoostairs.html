@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             body {
-    width: 900px;
-    height: 724px;
+    /* width: 900px;
+    height: 724px; */
     background-repeat: no-repeat;
     overflow: hidden;
 
@@ -31,12 +31,13 @@ h1 {
 }
 
 .sectionContainer {
+    /* width: 100%; */
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 20%;
+   
 }
-
 .section {
     width: 400px;
     height: 724px;
@@ -61,7 +62,7 @@ h1 {
 
 #sectionL {
     display: flex;
-    order: 0;
+    order: 2;
 }
 
 #sectionR {
@@ -71,7 +72,7 @@ h1 {
 
 #proceed {
     display: flex;
-    order: 2;
+    order: 0;
     background-size: cover;
     background-repeat: no-repeat;
 }
